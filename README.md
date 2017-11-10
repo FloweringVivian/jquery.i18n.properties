@@ -1,6 +1,6 @@
-前端国际化具体实现方案如下：
+# 基于jQuery.i18n.properties 实现前端页面的资源国际化
 
-1.html部分
+### 1.html部分
 
 目前html中统计结果有6种类型: html, text, title, alt, placeholder, value, 以及这6种的组合，详情请查看附件i18n-demo，请按照以下格式对标签进行修改:
 
@@ -53,7 +53,7 @@ html页面中需要引入如下js，位置放在jquery.min.js之后，其他js�
 <script src="js/language.js"></script>
 ```
 
-2.js部分
+### 2.js部分
 
 js部分直接用$.i18n.prop方法取properties文件中的key值即可，如下所示：
 
