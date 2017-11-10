@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="i18n" name='title'></title>
+    <meta id="i18n_pagename" content="message">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="" />
+    <meta name="description" content=""/>
+    <style>
+        div{
+            margin:20px;
+        }
+        input{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+<select id="language">
+    <option value="zh-CN">中文简体</option>
+    <option value="en">English</option>
+</select>
+<hr>
+<!--目前html中统计结果有6种类型，html, text, title, alt, placeholder, value, 以及这6种的组合，请按照以下格式对标签进行修改-->
+
+<!--html-->
+<div class="i18n" data-properties="htmlmsg" data-ptype="html"></div>
+
+<!--text-->
+<div class="i18n" data-properties="hellomsg1" data-ptype="text"></div>
+
+<!--title-->
+<div class="i18n" title="" data-properties="commonmsg1" data-ptype="title">请用鼠标划过我看title效果</div>
+
+<!--alt-->
+<div> <img class="i18n" src="images/alt1.png" alt="" data-properties="img" data-ptype="alt"> </div>
+
+<!--placeholder-->
+<div> <input class="i18n" type="text" placeholder="" data-properties="searchPlaceholder" data-ptype="placeholder"> </div>
+
+<!--value-->
+<div> <input class="i18n" type="button" value="" data-properties="btn" data-ptype="value"> </div>
+
+<!--text+title-->
+<div class="i18n" title="" data-properties="hellomsg2/hellomsg2" data-ptype="text/title"></div>
+
+<!--value+title-->
+<div> <input class="i18n" type="button" value="" data-properties="btn/btntip" data-ptype="value/title"> </div>
+
+<!--其他组合情况同理-->
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<!-- 加载语言包文件 -->
+<script src="js/jquery.i18n.properties.js"></script>
+<script src="js/language.js"></script>
+<script>
+    $(function(){
+        //js里中文处理
+        //alert($.i18n.prop('welcome'))
+    })
+</script>
+</body>
+</html>
