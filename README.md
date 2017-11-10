@@ -61,9 +61,7 @@ jQuery.i18n.properties({
                 var pType = $(this).attr('data-ptype');
                 var pTypeArr = pType.split('/');
                 var propertiesArr = properties.split('/');
-
-                console.log(pTypeArr)
-                //$.each(pTypeArr, function(i, val){
+            
                 for(var i=0;i<pTypeArr.length;i++){
 
                     if($.trim(pTypeArr[i]) == 'html'){
