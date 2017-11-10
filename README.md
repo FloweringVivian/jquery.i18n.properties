@@ -44,7 +44,60 @@
 
 上述用法如果无法满足个别特殊情况，可以针对特殊情况单独处理。
 
+language.js中针对6种类型及其组合情况进行了处理，如下：
 
+```javascript
+jQuery.i18n.properties({
+    name : 'message', //资源文件名称
+    path : 'i18n/', //资源文件路径
+    mode : 'map', //用Map的方式使用资源文件中的值 'both'
+    language : i18nLanguage,
+    callback : function() {//加载成功后设置显示内容
+
+        var insertEle = $(".i18n");
+        insertEle.each(function() {
+            var properties = $.trim($(this).attr('data-properties'));
+            if(properties){
+                var pType = $(this).attr('data-ptype');
+                var pTypeArr = pType.split('/');
+                var propertiesArr = properties.split('/');
+
+                console.log(pTypeArr)
+                //$.each(pTypeArr, function(i, val){
+                for(var i=0;i<pTypeArr.length;i++){
+
+                    if($.trim(pTypeArr[i]) == 'html'){
+
+                        $(this).html($.i18n.prop($.trim(propertiesArr[i])));
+
+                    }else if($.trim(pTypeArr[i]) == 'text'){
+
+                        $(this).text($.i18n.prop($.trim(propertiesArr[i])));
+
+                    }else if($.trim(pTypeArr[i]) == 'title'){
+
+                        $(this).attr('title', $.i18n.prop($.trim(propertiesArr[i])));
+
+                    }else if($.trim(pTypeArr[i]) == 'alt'){
+
+                        $(this).attr('alt', $.i18n.prop($.trim(propertiesArr[i])));
+
+                    }else if($.trim(pTypeArr[i]) == 'placeholder'){
+
+                        $(this).attr('placeholder', $.i18n.prop($.trim(propertiesArr[i])));
+
+                    }else if($.trim(pTypeArr[i]) == 'value'){
+
+                        $(this).val($.i18n.prop($.trim(propertiesArr[i])));
+
+                    };
+
+                };
+            };
+        });
+    }
+});
+```
 
 html页面中需要引入如下js，位置放在jquery.min.js之后，其他js之前即可。
 
