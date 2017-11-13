@@ -112,3 +112,5 @@ js部分直接用$.i18n.prop方法取properties文件中的key值即可，如下
 //js里中文处理
 alert($.i18n.prop('welcome'));
 ```
+
+
