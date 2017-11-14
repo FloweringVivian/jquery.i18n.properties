@@ -114,3 +114,5 @@ alert($.i18n.prop('welcome'));
 ```
 
 
+
+
