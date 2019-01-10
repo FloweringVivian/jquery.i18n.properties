@@ -113,6 +113,22 @@ js部分直接用$.i18n.prop方法取properties文件中的key值即可，如下
 alert($.i18n.prop('welcome'));
 ```
 
+* 参数值传递
+
+properties文件
+
+```javascript
+pay = 总费用为{0}元
+```
+js中
+
+```javascript
+$.i18n.prop('pay', 100);  //结果为"总费用为100元"
+```
+
+注：只能传递一个参数，不能传递多个参数，并且大括号{}里的默认值要填0才会生效
+
+
 
 
 
